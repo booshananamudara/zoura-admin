@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import { useRouter } from "next/navigation";
 import { ChevronDown, ChevronUp, MapPin, Phone, Package, Truck, CheckCircle, XCircle, Clock } from "lucide-react";
 
@@ -251,8 +251,8 @@ export default function OrdersPage() {
                         </thead>
                         <tbody className="divide-y divide-gray-100">
                             {orders.map((order) => (
-                                <>
-                                    <tr key={order.id} className="hover:bg-gray-50 transition-colors">
+                                <Fragment key={order.id}>
+                                    <tr className="hover:bg-gray-50 transition-colors">
                                         {/* Order ID & Date */}
                                         <td className="px-6 py-5">
                                             <div className="flex items-center gap-2">
@@ -453,7 +453,7 @@ export default function OrdersPage() {
                                             </td>
                                         </tr>
                                     )}
-                                </>
+                                </Fragment>
                             ))}
                         </tbody>
                     </table>
