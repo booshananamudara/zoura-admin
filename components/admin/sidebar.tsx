@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { Shield, LayoutDashboard, CheckSquare, LogOut } from 'lucide-react';
+import { Shield, LayoutDashboard, CheckSquare, LogOut, MessageSquare } from 'lucide-react';
 
 export function AdminSidebar() {
     const router = useRouter();
@@ -14,6 +14,7 @@ export function AdminSidebar() {
     const navItems = [
         { name: 'Dashboard', icon: LayoutDashboard, path: '/admin/dashboard' },
         { name: 'Approvals', icon: CheckSquare, path: '/admin/approvals' },
+        { name: 'Social Moderation', icon: MessageSquare, path: '/admin/social' },
     ];
 
     return (
